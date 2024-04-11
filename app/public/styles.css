@@ -1,0 +1,95 @@
+/* global.css - app wide styles imported by _app.js, in synch with mui custom theme */
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  font-family: "Roboto Flex", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+#__next {
+  height: 100%;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2.125rem;
+  line-height: 1.235;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/** Styles for components */
+
+.round {
+  border-radius: 50%;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+/** Markdown from content in .md files */
+.markdown img {
+  max-width: 100%;
+}
+
+.article-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+:root {
+  --focus-border: #0072e5;
+  --separator-border: trasparent;
+}
+
+/*
+ * MUI Customizations
+ * https://nextjs.org/docs/basic-features/built-in-css-support#sass-variables
+ * https://sass-lang.com/guide
+ */
+
+/* https://m3.material.io/components/top-app-bar/overview */
+
+.OFFMuiAppBar-colorPrimary {
+  color: "#ff0000";
+  background-color: "#00ff00";
+}

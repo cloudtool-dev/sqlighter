@@ -1,0 +1,20 @@
+[
+    {
+        "origin": [
+            "https://sqlighter.com",
+            "https://www.sqlighter.com",
+            "https://api.sqlighter.com",
+            "http://localhost:3000",
+            "http://192.168.8.101:3000"
+        ],
+        "responseHeader": [
+            "Content-Type"
+        ],
+        "method": [
+            "GET",
+            "PUT",
+            "POST"
+        ],
+        "maxAgeSeconds": 3600
+    }
+]

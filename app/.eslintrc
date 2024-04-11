@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "next",
+    "next/babel",
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "env": {
+    "jest": true
+  }
+}

@@ -1,0 +1,14 @@
+.dockerignore
+.prettierignore
+.editorconfig
+.cache
+.vscode
+.idea
+.readmes
+.env
+.next
+
+build
+node_modules
+out
+README.md

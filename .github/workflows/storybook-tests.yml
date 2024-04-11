@@ -1,0 +1,33 @@
+name: "Storybook Tests"
+on: push
+
+defaults:
+  run:
+    working-directory: app
+
+jobs:
+  # Run interaction and accessibility tests
+  # see https://storybook.js.org/tutorials/ui-testing-handbook/react/en/automate/
+  interaction-and-accessibility:
+    name: "Interaction and Accessibility"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+      - name: Install dependencies
+        run: yarn
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: yarn build-storybook
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && yarn test-storybook --maxWorkers=1"
+
+# Commad one liner:
+# npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" "npx http-server storybook-static --port 6006 --silent" "npx wait-on tcp:6006 && yarn test-storybook"
